@@ -5,20 +5,20 @@
  *      Author: ailton.fidelix
  */
 
-#ifndef INC_GPRS_H_
-#define INC_GPRS_H_
+#ifndef INC_SIM900_H_
+#define INC_SIM900_H_
 
+#include "gpio.h"
 #include "usart.h"
 
 #define APN "iot4u.br"
 
-void gprs_init(void);
-bool gprs_set_mode(void);
-bool gprs_check_cmd(char *cmd, char *resp);
-bool gprs_send_http_post(char *json);
+void sim900_init(void);
+void sim900_set_mode(void);
+HAL_StatusTypeDef sim900_send_http_post(char *json);
 
 
-#endif /* INC_GPRS_H_ */
+#endif /* INC_SIM900_H_ */
 
 /**
  * CMD ---> RESP
